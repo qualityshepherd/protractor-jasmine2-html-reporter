@@ -100,11 +100,22 @@ Default is <code>htmlReport.html</code>
 
 ### Consolidate and ConsolidateAll (optional)
 
-This option allow you to create diferent HTML for each test suite.
+This option allow you to create different HTML for each test suite.
 
 <pre><code>jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
    consolidate: true,
    consolidateAll: true
+}));</code></pre>
+
+Default is <code>false</code>
+
+### RetainScreenshots (optional)
+
+This option, if true, will not delete the screenshots before each test run. 
+
+<pre><code>jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
+   savePath: './test/reports/',
+   retainScreenshots: true
 }));</code></pre>
 
 Default is <code>false</code>
