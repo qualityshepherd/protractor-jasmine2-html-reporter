@@ -85,6 +85,7 @@ function Jasmine2HTMLReporter(options) {
     self.consolidate = options.consolidate === UNDEFINED ? true : options.consolidate;
     self.consolidateAll = self.consolidate !== false && (options.consolidateAll === UNDEFINED ? true : options.consolidateAll);
     self.filePrefix = options.filePrefix || (self.consolidateAll ? 'htmlReport' : 'htmlReport-');
+    self.retainScreenshots = options.retainScreenshots === UNDEFINED ? false : options.retainScreenshots;
 
     var suites = [],
         currentSuite = null,
@@ -112,9 +113,10 @@ function Jasmine2HTMLReporter(options) {
         exportObject.startTime = new Date();
         self.started = true;
 
-        //Delete previous screenshoots
-        rmdir(self.savePath);
-
+        if(!self.retainScreenshots) {
+            // Delete previous screenshots
+            rmdir(self.savePath);
+        }
     };
     self.suiteStarted = function(suite) {
         suite = getSuite(suite);
