@@ -3,7 +3,7 @@
 
 ## Differences in this version
 * added `retainScreenshots: true` to retain screenshots on subsequent test runs. Otherwise these get overwritten each run, which isn't great if you want historical reports. 
-* added support for [sharded test runs](https://github.com/angular/protractor/blob/master/lib/config.ts). So if you shard your tests, instead of reported after _each file_ (which who wants that?), it will append the result file, instead of overwriting, and thus, have the same behavior for non-sharded tests. Thanks to `aditya reddy` for this!
+* added support for [sharded test runs](https://github.com/angular/protractor/blob/master/lib/config.ts#L256). So if you shard your tests, instead of reported after _each file_ (which who wants that?), it will append the result file, instead of overwriting, and thus, have the same behavior for non-sharded tests. Thanks to `aditya reddy` for this!
 
 HTML reporter for Jasmine2 and Protractor that will include screenshots of each test if you want.
 This work is inspired by:
